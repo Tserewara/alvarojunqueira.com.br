@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+  <link rel="stylesheet" href="/css/index.min.1087f6957d7998296055fea8aad3f29743e4a3dea60bc8539843918169e1904b.css">
+  
+  <title>Álvaro Junqueira | Blog</title>
+
+</head><body><header class="header">
+  <a class="brand" href="/">
+    <span>Álvaro Junqueira</span>
+  </a>
+  <nav class="nav">
+    <a href="/artigos">Artigos</a>
+    <a href="/projetos">Projetos</a>
+    <a href="/sobre">Sobre</a>
+  </nav>
+</header><div id="content">
+
+
+
+
+
+<main class="main">
+  <article class="article">
+    <div class="article-header">
+      <img class="thumb" src="//via.placeholder.com/1000x500" alt="computer">
+      <h1 class="article-title">Como Colocar Um Site Hugo No Ar Apesar Do Título Do Post Ser Extremamente Grande</h1>
+      
+      <div class="meta">
+
+        <span>Por <a class="author" href="/sobre"></i> Álvaro Junqueira</a>
+        em </i> 10 de Agosto de 2021</span> 
+        
+        <div class="tags">
+          
+          <a href="/tags/hugo" class="tag">hugo</a>
+        
+          <a href="/tags/html" class="tag">html</a>
+        
+          <a href="/tags/css" class="tag">css</a>
+        
+        </div>
+        
+      </div>
+    </div>
+    <p>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Aenean aliquam molestie leo, vitae iaculis nisl. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! A ordem dos tratores não altera o pão duris.Copo furadis é disculpa de bebadis, arcu quam euismod magna. Quem num gosta di mé, boa gentis num é. Cevadis im ampola pa arma uma pindureta. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.</p>
+<h2 id="teste">Teste</h2>
+<p>Diuretics paradis num copo é motivis de denguis. Per aumento de cachacis, eu reclamis. Si num tem leite então bota uma pinga aí cumpadi! Quem manda na minha terra sou euzis!
+Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Viva Forevis aptent taciti sociosqu ad litora torquent. Paisis, filhis, espiritis santis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Delegadis gente finis, bibendum egestas augue arcu ut est. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Manduma pindureta quium dia nois paga.</p>
+<p><img src="https://cdn.dribbble.com/users/464226/screenshots/15944213/media/fa691691526776c99476dc53a2b3d486.png?compress=1&amp;resize=800x600" alt="computer"></p>
+<p>Pra lá , depois divoltis porris, paradis. Mé faiz elementum girarzis, nisi eros vermeio. Sapien in monti palavris qui num significa nadis i pareci latim. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Leite de capivaris, leite de mula manquis sem cabeça. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Casamentiss faiz malandris se pirulitá. Detraxit consequat et quo num tendi nada. In elementis mé pra quem é amistosis quis leo. Atirei o pau no gatis, per gatis num morreus.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;home.html&#39;</span><span class="p">),</span> <span class="mi">200</span>
+    
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">about</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;about.html&#39;</span><span class="p">),</span> <span class="mi">200</span>
+    
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/projects&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">projects</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;projects.html&#39;</span><span class="p">),</span> <span class="mi">200</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+  </article>
+</main>
+  
+
+        </div><footer>
+  Álvaro Junqueira &copy; 2021
+</footer></body>
+</html>
