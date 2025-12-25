@@ -1,0 +1,223 @@
+/* Modern Developer-Friendly Code Theme */
+/* Inspired by GitHub Dark Dimmed + One Dark Pro */
+
+/* Base code block styling */
+pre {
+  background: #1e1e2e;
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+pre:hover {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.15),
+    0 4px 6px -2px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-family: var(--font-jetbrains-mono), 'Fira Code', 'Consolas', 'Monaco', monospace;
+  color: #cdd6f4;
+  display: block;
+  box-shadow: none;
+}
+
+/* Inline code */
+code {
+  background: #f5f5f5;
+  color: #e63462;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-size: 0.875em;
+  font-family: var(--font-jetbrains-mono), 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-weight: 500;
+  border: 1px solid #e5e5e5;
+}
+
+/* Don't style inline code inside pre */
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.9rem;
+  border: none;
+  font-weight: normal;
+}
+
+/* Custom scrollbar for code blocks */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Syntax Highlighting - Modern Dark Theme */
+.hljs {
+  background: transparent;
+  color: #cdd6f4;
+}
+
+/* Keywords, tags, operators */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #c678dd;
+  font-weight: 500;
+}
+
+/* Functions, classes, titles */
+.hljs-function .hljs-title,
+.hljs-title.function_,
+.hljs-title.class_,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #61afef;
+  font-weight: 500;
+}
+
+/* Strings */
+.hljs-string,
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #a6e3a1;
+}
+
+/* Numbers, built-ins, constants */
+.hljs-number,
+.hljs-built_in,
+.hljs-literal,
+.hljs-attr,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  color: #fab387;
+}
+
+/* Comments */
+.hljs-comment,
+.hljs-quote {
+  color: #6c7086;
+  font-style: italic;
+}
+
+/* Attributes, properties */
+.hljs-attribute,
+.hljs-name,
+.hljs-property {
+  color: #89dceb;
+}
+
+/* Tags, punctuation */
+.hljs-tag,
+.hljs-punctuation {
+  color: #cdd6f4;
+}
+
+/* Meta, doctags */
+.hljs-meta,
+.hljs-doctag {
+  color: #f5c2e7;
+}
+
+/* Symbols */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-code {
+  color: #94e2d5;
+}
+
+/* Special emphasis */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* Additions/deletions (for diffs) */
+.hljs-addition {
+  background-color: rgba(166, 227, 161, 0.15);
+  color: #a6e3a1;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: rgba(243, 139, 168, 0.15);
+  color: #f38ba8;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Language badge (optional - can be added via JS) */
+pre[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #a6adc8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+pre[data-language] {
+  position: relative;
+  padding-top: 3rem;
+}
+
+/* Selection inside code blocks */
+pre code::selection,
+pre code *::selection {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  pre {
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  pre code {
+    font-size: 0.85rem;
+  }
+}
