@@ -26,7 +26,7 @@ export default async function Home() {
             cursor: "pointer"
           }}
         >
-          Marĩ ĩwẽ uptabi te dza watobro ãmemhã! Sapari a'ö!
+          Marĩ ĩwẽ uptabi te dza watobro ãmemhã! Tsapari a'ö!
         </p>
         <Image
           src="/images/Designer.jpeg"
