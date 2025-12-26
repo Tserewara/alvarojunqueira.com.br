@@ -1,7 +1,7 @@
 ---
 title: 'Explorando TypeScript Avançado'
 date: '2025-12-26'
-status: 'final'
+status: 'draft'
 draftStartDate: '2025-12-26'
 lastUpdated: '2025-12-26'
 ---
