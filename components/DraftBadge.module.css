@@ -1,0 +1,31 @@
+.draftBadge {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.badge {
+  display: inline-block;
+  background: #f59e0b;
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.metadata {
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+  color: #78350f;
+}
+
+.message {
+  margin: 0.75rem 0 0 0;
+  font-size: 0.875rem;
+  color: #78350f;
+  font-style: italic;
+}

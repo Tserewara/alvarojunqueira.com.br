@@ -1,6 +1,7 @@
 ---
 title: 'One more post'
 date: '2024-07-30'
+status: 'final'
 ---
 
 ## One test

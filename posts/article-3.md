@@ -1,6 +1,7 @@
 ---
 title: 'Testing Things'
 date: '2023-07-29'
+status: 'final'
 ---
 
 ## Let's get it started
