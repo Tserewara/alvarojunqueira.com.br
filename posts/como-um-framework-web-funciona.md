@@ -118,3 +118,23 @@ Note que na verdade o processo cliente que críamos se "conecta" ao arquivo. Qua
 Como desafio, tente mudar o código para que o cliente passe dois números e o servidor retorne a soma deles.
 
 ### Problema 2 - Reaproveitar o canal de comunicação
+
+Criamos um sistema rudimentar, mas funcional que permite conectar dois processos. Agora pense no seguinte: e se quisermos reaproveitar esse sistema para conectar quaisquer processos? Nosso computador roda milhares de processos. Se tivermos que escrever toda vez essa sequência de abre e fecha arquivos, cria loops, remove arquivos, teríamos muito trabalho. Já que essa parte é basicamente a mesma para todos os cenários, podemos **esconder** isso dos processos e criar uma **forma comum** para que qualquer processo possa se comunicar com outro.
+
+### Solução
+
+Vamos criar uma versão genérica, ou abstrata desse canal. Na nossa versão inicial, usamos um simples arquivo. Porém na prática, esse detalhe não é importante para os nossos processos. Eles precisam de qualquer coisa que permita a comunicação. Portanto, vamos abstrair, ou esconder esses detalhes e deixar exposto apenas o que importa para os processos se comunicarem.
+
+```python
+class Channel:
+    # orquestra a comunicação entre os processos
+```
+
+Dessa forma temos o seguinte:
+
+```mermaid
+graph LR
+    A[Processo Servidor] <--> B[Channel] <--> C[Processo Cliente]
+``` 
+
+
