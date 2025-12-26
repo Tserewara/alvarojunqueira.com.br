@@ -1,9 +1,7 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import Layout from '@/components/Layout'
+import PostCard from '@/components/PostCard'
 import { getSortedPostData } from '@/lib/posts'
-import Date from '@/components/Date'
-import utilStyles from '@/styles/utils.module.css'
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 
@@ -20,71 +18,83 @@ export default async function Home() {
   return (
     <Layout home>
       <div style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center"
+        maxWidth: '800px',
+        margin: '0 auto',
+        padding: '2rem 1rem'
       }}>
         {siteMode === 'draft' && (
           <div style={{
-            background: '#fef3c7',
+            background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
             border: '2px solid #f59e0b',
-            borderRadius: '8px',
-            padding: '1rem',
-            margin: '1rem 0',
-            textAlign: 'center',
-            maxWidth: '600px'
+            borderRadius: '12px',
+            padding: '1rem 1.5rem',
+            margin: '0 0 2rem 0',
+            textAlign: 'center'
           }}>
-            <strong>Modo Draft</strong>: Aqui documento minha jornada em tempo real.
+            <strong style={{ color: '#78350f' }}>Draft Mode</strong>
+            <span style={{ color: '#92400e', marginLeft: '0.5rem' }}>
+              — Documenting my learning journey in real-time
+            </span>
           </div>
         )}
 
-        <p
-          title="Algo incrível vai acontecer aqui! Espere um pouco!"
-          style={{
-            textAlign: "center",
-            fontSize: "24px",
-            cursor: "pointer"
-          }}
-        >
-          Marĩ ĩwẽ uptabi te dza watobro ãmemhã! Tsapari a'ö!
-        </p>
-        <Image
-          src="/images/Designer.jpeg"
-          className="img-profile"
-          alt="Álvaro"
-          width={300}
-          height={300}
-          style={{height: "300px", width: "auto"}}
-        />
+        <header style={{ marginBottom: '3rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '1.5rem' }}>
+            <Image
+              src="/images/profile.jpg"
+              alt="Álvaro Junqueira"
+              width={120}
+              height={120}
+              style={{
+                borderRadius: '50%',
+                border: '3px solid #e5e7eb',
+                flexShrink: 0
+              }}
+            />
+            <div>
+              <h1 style={{
+                fontSize: '2.5rem',
+                fontWeight: '700',
+                margin: '0 0 0.5rem 0',
+                color: '#111827'
+              }}>
+                Álvaro Junqueira
+              </h1>
+              <p style={{
+                fontSize: '1.125rem',
+                color: '#6b7280',
+                margin: 0
+              }}>
+                Self-taught developer mastering the fundamentals
+              </p>
+            </div>
+          </div>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: '1.75',
+            color: '#374151',
+            margin: 0
+          }}>
+            Welcome to my digital garden. I'm exploring programming and mathematics from the ground up,
+            documenting everything I learn along the way. No guru pretenses — just honest exploration.
+          </p>
+        </header>
 
         {allPostsData.length > 0 && (
-          <section style={{ width: '100%', maxWidth: '600px', margin: '2rem 0' }}>
-            <h2 className={utilStyles.headingLg}>Posts</h2>
-            <ul className={utilStyles.list}>
+          <section>
+            <h2 style={{
+              fontSize: '1.875rem',
+              fontWeight: '700',
+              marginBottom: '1.5rem',
+              color: '#111827'
+            }}>
+              Recent Posts
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {allPostsData.map((post) => (
-                <li key={post.id} className={utilStyles.listItem}>
-                  <Link href={`/posts/${post.id}`}>
-                    {post.title}
-                    {post.status === 'draft' && (
-                      <span style={{
-                        marginLeft: '0.5rem',
-                        background: '#fbbf24',
-                        color: '#78350f',
-                        padding: '0.25rem 0.5rem',
-                        borderRadius: '9999px',
-                        fontSize: '0.625rem',
-                        fontWeight: 'bold'
-                      }}>DRAFT</span>
-                    )}
-                  </Link>
-                  <br />
-                  <small className={utilStyles.lightText}>
-                    <Date dateString={post.date} />
-                  </small>
-                </li>
+                <PostCard key={post.id} post={post} />
               ))}
-            </ul>
+            </div>
           </section>
         )}
       </div>
