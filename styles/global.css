@@ -102,6 +102,18 @@ article tr:hover {
   background: #f9fafb;
 }
 
+/* Mermaid diagrams styling */
+.mermaid {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.mermaid pre,
+.mermaid code {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   html,

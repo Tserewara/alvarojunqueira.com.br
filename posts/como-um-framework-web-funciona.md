@@ -126,6 +126,7 @@ Criamos um sistema rudimentar, mas funcional que permite conectar dois processos
 Vamos criar uma versão genérica, ou abstrata desse canal. Na nossa versão inicial, usamos um simples arquivo. Porém na prática, esse detalhe não é importante para os nossos processos. Eles precisam de qualquer coisa que permita a comunicação. Portanto, vamos abstrair, ou esconder esses detalhes e deixar exposto apenas o que importa para os processos se comunicarem.
 
 ```python
+# channel.py
 class Channel:
     # orquestra a comunicação entre os processos
 ```

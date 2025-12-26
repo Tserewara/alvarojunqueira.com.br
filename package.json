@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:draft": "NEXT_PUBLIC_FORCE_DRAFT_MODE=true next dev",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --noEmit",
@@ -10,6 +11,7 @@
   "dependencies": {
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
+    "mermaid": "^11.12.2",
     "next": "^16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
