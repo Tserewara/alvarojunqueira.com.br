@@ -10,7 +10,7 @@ lastUpdated: '2025-12-26'
 
 Um framework web é uma ferramenta que facilita o desenvolvimento de aplicações. Essa facilidade existe porque ele tem abstrações, ou soluções elegantes e genéricas que permitem nos concentrarmos na aplicação que estamos construindo sem ter que implementar detalhes que são comuns a toda aplicação web. Esse post é um exercício prático para entender de forma intuitiva e gradual como um framework web funciona.
 
-### Problema 1
+### Problema 1 - Comunicação entre duas partes
 
 Imagine que tenhamos uma função em Python que retorne a mensagem "Hey, como vai?".
 
@@ -19,7 +19,7 @@ def main():
     return "Hey, como vai?"
 ```
 
-Você pode simplesmente invocar a função e obter o resultado. Mas e se quisesse algo diferente: deixar a função rodando o tempo todo "escutando" qualquer chamada e só então retornar a mensagem? Como faríamos isso?
+Podemos simplesmente invocar a função e obter o resultado. Mas e se quiséssemos algo diferente: deixar a função rodando o tempo todo "escutando" qualquer chamada e só então retornar a mensagem? Como faríamos isso?
 
 ### Solução
 
@@ -32,9 +32,9 @@ if __name__ == "__main__":
     main()
 ```
 
-Bem, agora temos uma função que roda eternamente. Porém, removemos a parte em que ela retorna a mensagem. O nosso desafio é: **fazer a função ficar escutando chamadas de qualquer um e sempre retornar a mensagem** "Hey, como vai?". Invocar uma função "parada" é simples. O que queremos invocar é uma "função" que está rodando. Isso é o que chamamos de processo.
+Bem, agora temos uma função que roda eternamente. Porém, removemos a parte em que ela retorna a mensagem. O nosso desafio é: **fazer a função ficar escutando chamadas de qualquer um e sempre retornar a mensagem** "Hey, como vai?". Invocar uma função "parada" é simples. O que queremos invocar é uma "função" que está rodando. Isso é o que chamamos de **processo**.
 
-Bem, agora que entendeu que chamar uma função rodando (processo) é diferente de chamar uma função parada, entendemos que precisamos de um **canal** para fazer a chamada. A ideia é bem simples: o processo se conecta nesse canal. Assim, quando queremos um retorno do processo, nos conectamos nesse canal e o obtemos. Vamos usar algo que você já conhece para criar esse canal: um arquivo.
+Bem, agora que entendemos que chamar uma função rodando (processo) é diferente de chamar uma função parada, entendemos que precisamos de um **canal** para fazer a chamada. A ideia é bem simples: o processo se conecta nesse canal. Assim, quando queremos um retorno do processo, nos conectamos nesse canal e o obtemos. Vamos usar algo que você já conhece para criar esse canal: um arquivo.
 
 ```python
 import os
@@ -112,3 +112,9 @@ print(response)
 # Consome a resposta (remove do arquivo)
 os.remove("channel.txt")
 ```
+
+Note que na verdade o processo cliente que críamos se "conecta" ao arquivo. Quando ele escreve nesse arquivo, o processo servidor escuta e então escreve novamente no arquivo. O cliente por sua vez, lê novamente o arquivo, obtendo a resposta escrita pelo servidor. Após a comunicação terminar, "fechamos" o arquivo e o destruímos.
+
+Como desafio, tente mudar o código para que o cliente passe dois números e o servidor retorne a soma deles.
+
+### Problema 2 - Reaproveitar o canal de comunicação
